@@ -1,23 +1,31 @@
 import React from 'react'
-import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Route, NavLink } from 'react-router-dom'
 
 import Author from '_/components/author'
 import Category from '_/components/category'
 import Book from '_/components/book'
 
-import '_/styles/index.scss'
+import _styles from '_/styles/index.scss'
+import _header from '_/styles/header.scss'
+import _menu from '_/styles/menu.scss'
 
 function App() {
   return (
     <Router>
       <div>
-        <div>
-          <Link to="/author">作者</Link>
-          <Link to="/category">分类</Link>
-          <Link to="/book">书籍</Link>
+        <div className={_header.container}>
+          <div className={_header.logo}>
+            React Example
+          </div>
         </div>
 
-        <div>
+        <div className={_menu.container}>
+          <NavLink activeClassName={_menu.active} to="/author">作者</NavLink>
+          <NavLink activeClassName={_menu.active} to="/category">分类</NavLink>
+          <NavLink activeClassName={_menu.active} to="/book">书籍</NavLink>
+        </div>
+
+        <div className={_styles.main}>
           <Route path="/author" component={Author} />
           <Route path="/category" component={Category} />
           <Route path="/book" component={Book} />

@@ -1,0 +1,25 @@
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 65px;
+  background: #fff;
+  width: 200px;
+  min-height: 100vh;
+  z-index: 1;
+
+  a {
+    color: #666;
+    text-decoration: none;
+    display: block;
+    padding: 10px 40px;
+
+    &:hover {
+      background: #f2f2f2;
+    }
+  }
+
+  .active {
+    color: #d9534f;
+  }
+}
