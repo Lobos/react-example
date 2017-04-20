@@ -1,4 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { Route } from 'react-router-dom'
+import List from './List'
 
 class Author extends Component {
   constructor(props) {
@@ -7,16 +10,22 @@ class Author extends Component {
   }
 
   render() {
+    const { match } = this.props
+
     return (
-      <div>作者列表</div>
+      <div>
+        <Route
+          exact
+          path={`${match.url}`}
+          render={() => <List />}
+        />
+      </div>
     )
   }
 }
 
 Author.propTypes = {
-}
-
-Author.defaultProps = {
+  match: PropTypes.object.isRequired,
 }
 
 export default Author

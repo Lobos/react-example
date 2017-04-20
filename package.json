@@ -14,9 +14,13 @@
   },
   "license": "MIT",
   "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.8",
+    "rctui": "^0.7.14-rc",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "refetch": "^0.2.4"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",

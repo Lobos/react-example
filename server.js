@@ -28,6 +28,11 @@ router.get('/', async function (ctx) {
   await send(ctx, 'demo/index.html')
 })
 
+router.get('/authorlist.json', async function (ctx) {
+  await send(ctx, 'demo/authorlist.json')
+})
+
+
 // 线上会使用压缩版本的React，而在开发的时候，我们需要使用react-with-addons来查看错误信息
 // 所以这里把React和ReactDOM代理到本地未压缩的文件
 router.get('**/react.min.js', async function (ctx) {

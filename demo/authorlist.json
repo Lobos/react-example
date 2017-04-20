@@ -1,0 +1,21 @@
+{
+  "data": {
+    "total": 2,
+    "page": 1,
+    "size": 10,
+    "list": [
+      {
+        "id": 1,
+        "name": "乔治.R.R.马丁",
+        "birthday": "1948-09-20",
+        "nationality": "美国"
+      },
+      {
+        "id": 2,
+        "name": "托尔金",
+        "birthday": "1892-01-03",
+        "nationality": "英国"
+      }
+    ]
+  }
+}
