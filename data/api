@@ -1,0 +1,9 @@
+{"k":"0000000078","o":"0000000322","v":"001"}
+{"_id":2,"_uid":2,"_dt":1492690957735,"_s":"7a9305809bb3dc79785bad27d4eab3f7"}
+{"weight":0,"method":"get","route":"/api/authorlist","query":"query ($page: Int, $size: Int) {\n  data: authorList(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      name\n      nationality\n      birthday\n    }\n  }\n}","createAt":1492690917481,"updateAt":1492690957711,"_id":2}
+{"k":"0000000078","o":"0000000381","v":"001"}
+{"_id":3,"_uid":4,"_dt":1492743385865,"_s":"6e17d61d1d2856c7a5a8a8fd031030e9"}
+{"weight":0,"method":"post","route":"/api/author","query":"mutation (\n  $id: ID\n  $name: String\n  $nationality: String\n  $birthday: String\n) {\n  data: saveAuthor (\n    _id: $id\n    name: $name\n    nationality: $nationality\n    birthday: $birthday\n  ) {\n    _id\n    name\n    nationality\n    birthday\n  }\n}","createAt":1492743266365,"updateAt":1492743385864,"_id":3}
+{"k":"0000000078","o":"0000000229","v":"001"}
+{"_id":4,"_uid":4,"_dt":1492743436124,"_s":"c0124c3492e75cc194995362b908364a"}
+{"weight":0,"method":"get","query":"query ($id: ID) {\n  data: author(_id: $id) {\n    id: _id\n    name\n    nationality\n    birthday\n  }\n}","route":"/api/author/:id","createAt":1492743366348,"updateAt":1492743436120,"_id":4}

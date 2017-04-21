@@ -16,6 +16,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
+    "qenya": "^0.2.5",
     "rctui": "^0.7.14-rc",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
