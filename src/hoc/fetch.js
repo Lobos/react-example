@@ -13,35 +13,43 @@ export default function (Origin) {
       super(props)
       this.state = {
         data: null,
-        status: PENDING,
+        status: props.fetch ? PENDING : SUCCESS,
       }
 
       this.fetchData = this.fetchData.bind(this)
     }
 
     componentWillMount() {
-      if (this.props.fetch) this.fetchData()
-      this.isMount = true
+      this.fetchData()
+      this.isUnmounted = false
+    }
+
+    componentWillReceiveProps(nextProps) {
+      // 这里可以对nextProps.fetch和this.props.fetch做一个deepEqual对比，如果不同才重新获取数据
+      this.fetchData(nextProps)
     }
 
     componentWillUnmount() {
-      this.isMount = false
+      this.isUnmounted = true
     }
 
-    fetchData() {
-      let { fetch } = this.props
+    fetchData(props = this.props) {
+      let { fetch } = props
+
+      if (!fetch) return
+
       if (typeof fetch === 'string') fetch = { url: fetch }
 
       this.setState({ data: null, status: PENDING })
       refetch.get(fetch.url, fetch.data).then((res) => {
-        if (!this.isMount) return
+        if (this.isUnmounted) return
         if (res.data) {
           this.setState({ status: SUCCESS, data: res.data })
         } else {
-          this.setState({ status: FAILURE, message: res.errors[0] })
+          this.setState({ status: FAILURE, message: res.data === null ? '请求资源不存在' : res.error })
         }
       }).catch((e) => {
-        if (!this.isMount) return
+        if (this.isUnmounted) return
         this.setState({ status: FAILURE, message: e.message })
       })
     }

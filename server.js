@@ -1,12 +1,15 @@
 const Koa = require('koa')
 const send = require('koa-send')
+const httpProxy = require('http-proxy')
 const Router = require('koa-router')
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
 const config = require('./webpack.dev.config')
 
 const qenya = require('qenya')
+const DEVPORT = 3001
 
+// mock data server ========================================
 qenya({
   appPort: 3002,
   apiPort: 3003,
@@ -21,7 +24,7 @@ qenya({
   }
 })
 
-const DEVPORT = 3001
+// webpack server ===========================================
 
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
@@ -37,15 +40,25 @@ new WebpackDevServer(webpack(config), {
   }
 })
 
+// dev server ================================================
 const app = new Koa()
 const router = new Router()
 
-router.get('/', async function (ctx) {
-  await send(ctx, 'demo/index.html')
+const proxy = new httpProxy.createProxyServer({
+    target: 'http://localhost:3003/',
+    changeOrigin: true
 })
 
-router.get('/api/*', async function (ctx) {
-  ctx.redirect(`http://localhost:3003${ctx.path}`)
+const methods = ['get', 'post', 'put', 'delete']
+methods.forEach(m => 
+  router[m]('/api/*', function (ctx) {
+    proxy.web(ctx.req, ctx.res)
+    ctx.body = ctx.res
+  })
+)
+
+router.get('/', async function (ctx) {
+  await send(ctx, 'demo/index.html')
 })
 
 // 线上会使用压缩版本的React，而在开发的时候，我们需要使用react-with-addons来查看错误信息

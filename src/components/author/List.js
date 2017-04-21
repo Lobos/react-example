@@ -1,28 +1,32 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Table, Card } from 'rctui'
-import fetch from '_/hoc/fetch'
+import { Card, Button } from 'rctui'
+import queryString from 'query-string'
+import TableList from './TableList'
 
 function List(props) {
-  const { data } = props
+  const { history } = props
+
+  const query = queryString.parse(history.location.search)
+  if (!query.size) query.size = 10
+
   return (
     <Card>
       <Card.Header>作者列表</Card.Header>
-      <Table
-        data={data.list}
-        columns={[
-          { name: 'id', header: 'ID' },
-          { name: 'name', header: '姓名', sort: true },
-          { name: 'nationality', header: '国籍' },
-          { name: 'birthday', header: '生日', sort: true },
-        ]}
+      <div style={{ padding: 12 }}>
+        <Button status="success" onClick={() => history.push('/author/new')}>添加作者</Button>
+      </div>
+
+      <TableList
+        history={history}
+        fetch={{ url: '/api/authorlist', data: query }}
       />
     </Card>
   )
 }
 
 List.propTypes = {
-  data: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
 }
 
-export default fetch(List)
+export default List

@@ -7,3 +7,9 @@
 {"k":"0000000078","o":"0000000229","v":"001"}
 {"_id":4,"_uid":4,"_dt":1492743436124,"_s":"c0124c3492e75cc194995362b908364a"}
 {"weight":0,"method":"get","query":"query ($id: ID) {\n  data: author(_id: $id) {\n    id: _id\n    name\n    nationality\n    birthday\n  }\n}","route":"/api/author/:id","createAt":1492743366348,"updateAt":1492743436120,"_id":4}
+{"k":"0000000078","o":"0000000385","v":"001"}
+{"_id":3,"_uid":4,"_dt":1492753826041,"_s":"1a52338b6c149af428d50437bcb817b7"}
+{"weight":0,"method":"post","route":"/api/author","query":"mutation (\n  $id: ID\n  $name: String\n  $nationality: String\n  $birthday: String\n) {\n  data: saveAuthor (\n    _id: $id\n    name: $name\n    nationality: $nationality\n    birthday: $birthday\n  ) {\n    id: _id\n    name\n    nationality\n    birthday\n  }\n}","createAt":1492743266365,"updateAt":1492753826040,"_id":3}
+{"k":"0000000078","o":"0000000198","v":"001"}
+{"_id":5,"_uid":5,"_dt":1492762762197,"_s":"893909ffb47690d8e7fbf81d0c4db748"}
+{"weight":0,"method":"delete","query":"mutation ($id: ID) {\n  data: deleteAuthor (_id: $id)\n}","route":"/api/author","createAt":1492762762102,"updateAt":1492762762164,"_id":{"$wrap":"$oid","v":5}}
