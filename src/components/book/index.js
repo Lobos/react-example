@@ -1,19 +1,26 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Card, Button } from 'rctui'
+import queryString from 'query-string'
+import List from './List'
 
-class Book extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
+function Book(props) {
+  const { history } = props
 
-  render() {
-    return (
-      <div>书籍列表</div>
-    )
-  }
+  const query = queryString.parse(history.location.search)
+  if (!query.size) query.size = 12
+
+  return (
+    <Card>
+      <Card.Header>书籍管理</Card.Header>
+
+      <List history={history} fetch={{ url: '/api/booklist', data: query }} />
+    </Card>
+  )
 }
 
 Book.propTypes = {
+  history: PropTypes.object.isRequired,
 }
 
 Book.defaultProps = {

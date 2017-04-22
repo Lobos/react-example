@@ -4,3 +4,6 @@
 {"k":"0000000078","o":"0000000252","v":"001"}
 {"_id":3,"_uid":3,"_dt":1492823136713,"_s":"f7fa9f0c572ce952a6e418e84b0cfd78"}
 {"code":"genre","name":"分类","createAt":1492821786245,"fields":[{"name":"name","label":"名称","type":"text","max":20,"min":"1","required":true},{"name":"desc","label":"描述","type":"text","max":"200","min":"1"}],"updateAt":1492823136708,"_id":3}
+{"k":"0000000078","o":"0000000717","v":"001"}
+{"_id":4,"_uid":4,"_dt":1492846769804,"_s":"bf5ce17a228a095def5d8c6d55941f97"}
+{"code":"book","name":"书籍","createAt":1492845795652,"fields":[{"name":"title","label":"名称","type":"text","max":"20","min":"1","required":true},{"name":"author","label":"作者","type":"enum","sourceType":"ref","renderType":"json","sourceRef":"author","optionTpl":"{name}","valueTpl":"{_id}"},{"name":"genres","label":"类型","type":"enum","mult":true,"sourceType":"ref","renderType":"json","sourceRef":"genre","sep":",","optionTpl":"{name}","valueTpl":"{_id}"},{"name":"publishAt","label":"出版时间","type":"text","max":20},{"name":"cover","label":"封面图片","type":"text","max":"200"},{"name":"desc","label":"简介","type":"text","max":"200"}],"updateAt":1492846769762,"_id":{"$wrap":"$oid","v":4}}
