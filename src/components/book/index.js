@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Card, Button } from 'rctui'
+import { Card } from 'rctui'
 import queryString from 'query-string'
 import List from './List'
 
@@ -21,9 +21,6 @@ function Book(props) {
 
 Book.propTypes = {
   history: PropTypes.object.isRequired,
-}
-
-Book.defaultProps = {
 }
 
 export default Book
