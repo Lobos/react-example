@@ -1,6 +1,6 @@
-{"k":"0000000078","o":"0000000124","v":"001"}
-{"_id":2,"_uid":2,"_dt":1492690420914,"_s":"79fed8190d6d146e9df5a5cd57b3351c"}
-{"code":"author","name":"作者","createAt":1492690420907,"fields":[],"updateAt":1492690420907,"_id":{"$wrap":"$oid","v":2}}
 {"k":"0000000078","o":"0000000319","v":"001"}
 {"_id":2,"_uid":2,"_dt":1492690506350,"_s":"64755ca32326aeda7b1e981423eb9ecb"}
 {"code":"author","name":"作者","createAt":1492690420907,"fields":[{"name":"name","label":"姓名","required":true,"type":"text","max":20,"min":"1"},{"name":"nationality","label":"国籍","type":"text","max":20},{"name":"birthday","label":"生日","type":"date"}],"updateAt":1492690506341,"_id":{"$wrap":"$oid","v":2}}
+{"k":"0000000078","o":"0000000252","v":"001"}
+{"_id":3,"_uid":3,"_dt":1492823136713,"_s":"f7fa9f0c572ce952a6e418e84b0cfd78"}
+{"code":"genre","name":"分类","createAt":1492821786245,"fields":[{"name":"name","label":"名称","type":"text","max":20,"min":"1","required":true},{"name":"desc","label":"描述","type":"text","max":"200","min":"1"}],"updateAt":1492823136708,"_id":3}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import refetch from 'refetch'
-import { Mask, Spin } from 'rctui'
+import Loading from '_/components/comm/Loading'
 
 const PENDING = 0
 const SUCCESS = 1
@@ -62,13 +62,7 @@ export default function (Origin) {
       }
 
       if (status === PENDING && this.props.loading) {
-        return (
-          <div style={{ position: 'relative' }}>
-            <Mask >
-              <Spin size={40} type="simple-circle" />
-            </Mask>
-          </div>
-        )
+        return <Loading />
       }
 
       if (status === FAILURE) {

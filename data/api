@@ -13,3 +13,27 @@
 {"k":"0000000078","o":"0000000198","v":"001"}
 {"_id":5,"_uid":5,"_dt":1492762762197,"_s":"893909ffb47690d8e7fbf81d0c4db748"}
 {"weight":0,"method":"delete","query":"mutation ($id: ID) {\n  data: deleteAuthor (_id: $id)\n}","route":"/api/author","createAt":1492762762102,"updateAt":1492762762164,"_id":{"$wrap":"$oid","v":5}}
+{"k":"0000000078","o":"0000000305","v":"001"}
+{"_id":6,"_uid":6,"_dt":1492824429695,"_s":"473b0a56603e0de8243c1e9f1ee63b23"}
+{"weight":0,"method":"get","route":"/genres","query":"query ($page: Int, $size: Int) {\n  genreList(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      name\n      desc\n    }\n  }\n}","createAt":1492824429598,"updateAt":1492824429692,"_id":{"$wrap":"$oid","v":6}}
+{"k":"0000000078","o":"0000000288","v":"001"}
+{"_id":6,"_uid":6,"_dt":1492824438916,"_s":"d52b987dc08c0b67a26047fb26482a0d"}
+{"weight":0,"method":"get","route":"/api/genres","query":"query ($page: Int, $size: Int) {\n  genreList(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      name\n      desc\n    }\n  }\n}","createAt":1492824429598,"updateAt":1492824438906,"_id":6}
+{"k":"0000000078","o":"0000000217","v":"001"}
+{"_id":7,"_uid":7,"_dt":1492824498934,"_s":"a761323212ac3505691249877d72e245"}
+{"weight":0,"method":"get","route":"/genre/:id","query":"query ($id: ID) {\n  genre(_id: $id) {\n    id: _id\n    name\n    desc\n  }\n}","createAt":1492824498928,"updateAt":1492824498932,"_id":{"$wrap":"$oid","v":7}}
+{"k":"0000000078","o":"0000000200","v":"001"}
+{"_id":7,"_uid":7,"_dt":1492824507554,"_s":"439294845e13c06721fcedaf7d0b844a"}
+{"weight":0,"method":"get","route":"/api/genre/:id","query":"query ($id: ID) {\n  genre(_id: $id) {\n    id: _id\n    name\n    desc\n  }\n}","createAt":1492824498928,"updateAt":1492824507553,"_id":7}
+{"k":"0000000078","o":"0000000316","v":"001"}
+{"_id":8,"_uid":8,"_dt":1492824565853,"_s":"8c06395d7ead4b49e7e5eb4ec4524759"}
+{"weight":0,"method":"post","query":"mutation (\n  $id: ID\n  $name: String\n  $desc: String\n) {\n  data: saveGenre (\n    _id: $id\n    name: $name\n    desc: $desc\n  ) {\n    id: _id\n    name\n    desc\n  }\n}","route":"/api/genre","createAt":1492824565818,"updateAt":1492824565852,"_id":{"$wrap":"$oid","v":8}}
+{"k":"0000000078","o":"0000000206","v":"001"}
+{"_id":7,"_uid":8,"_dt":1492824575028,"_s":"6c21e24f07b09307d39b766d4261c170"}
+{"weight":0,"method":"get","route":"/api/genre/:id","query":"query ($id: ID) {\n  data: genre(_id: $id) {\n    id: _id\n    name\n    desc\n  }\n}","createAt":1492824498928,"updateAt":1492824575027,"_id":7}
+{"k":"0000000078","o":"0000000294","v":"001"}
+{"_id":6,"_uid":8,"_dt":1492824581982,"_s":"2998fe9a14434faeeb16ba43872b1d4a"}
+{"weight":0,"method":"get","route":"/api/genres","query":"query ($page: Int, $size: Int) {\n  data: genreList(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      name\n      desc\n    }\n  }\n}","createAt":1492824429598,"updateAt":1492824581981,"_id":6}
+{"k":"0000000078","o":"0000000196","v":"001"}
+{"_id":9,"_uid":9,"_dt":1492824637606,"_s":"185efeaea1b38c965c00b290676b1b70"}
+{"weight":0,"method":"delete","route":"/api/genre","query":"mutation ($id: ID) {\n  data: deleteGenre (_id: $id)\n}","createAt":1492824637594,"updateAt":1492824637600,"_id":{"$wrap":"$oid","v":9}}
