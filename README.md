@@ -1249,7 +1249,7 @@ export default fetch(TableList)
 
 ```
 
-可以看到，通过react-router和高阶组件fetch，我们把author下面的所有组件（列表、分页、编辑）都变成了无状态的组件。每个组件只关心route提供了什么参数，应该怎样去展示，当需要变化的时候，history.push到相应的route就行了。
+通过react-router和高阶组件fetch，我们把author下面的所有组件（列表、分页、编辑）都变成了无状态的组件。每个组件只关心route提供了什么参数，应该怎样去展示，当需要变化的时候，history.push到相应的route就行了。
 
 完整代码
 
@@ -1399,7 +1399,7 @@ export default function (state = {
 
 ```
 
-虽然只有一个reducer，为了掩饰结构，还是建一个 src/reducers/index.js 文件
+虽然只有一个reducer，为了演示结构，还是建一个 src/reducers/index.js 文件
 
 ```
 import { combineReducers } from 'redux'
