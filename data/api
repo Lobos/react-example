@@ -34,3 +34,6 @@
 {"k":"0000000080","o":"0000000206","v":"001"}
 {"_id":13,"_uid":13,"_dt":1495705432076,"_s":"3022e21f0a134201c2a0702f0cfae8be"}
 {"weight":0,"method":"delete","route":"/api/book","query":"mutation ($id: ID) {\n  data: deleteBook (_id: $id)\n}","createAt":1492848609885,"updateAt":1495705432073,"_id":{"$wrap":"$oid","v":13},"status":1}
+{"k":"0000000080","o":"0000000226","v":"001"}
+{"_id":13,"_uid":13,"_dt":1495713408185,"_s":"4242f1f5a03b8aaa8271fa611aa9e9c3"}
+{"weight":0,"method":"delete","route":"/api/book","query":"mutation ($id: ID) {\n  data: deleteBook (_id: $id)\n}","createAt":1492848609885,"updateAt":1495713408183,"_id":{"$wrap":"$oid","v":13},"status":1,"apiType":"graphql"}

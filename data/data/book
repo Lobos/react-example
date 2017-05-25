@@ -55,3 +55,6 @@
 {"k":"0000000082","o":"0000000154","v":"001"}
 {"_id":"17","_uid":17,"_dt":1495705930954,"_s":"2ae63ac7eaa4e9c4a4753d1c03e0f2df"}
 {"title":"沉默的大多数","author":"7","genres":"14,18","publishAt":"1997","_id":"17","cover":"https://img1.doubanio.com/lpic/s1447349.jpg","desc":""}
+{"k":"0000000082","o":"0000000157","v":"001"}
+{"_id":"17","_uid":17,"_dt":1495713095079,"_s":"ea2b39699de9b37bd147de448a1220b8"}
+{"title":"沉默的大多数","author":"7","genres":"18,15,14","publishAt":"1997","_id":"17","cover":"https://img1.doubanio.com/lpic/s1447349.jpg","desc":""}
