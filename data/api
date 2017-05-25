@@ -1,57 +1,36 @@
-{"k":"0000000078","o":"0000000322","v":"001"}
-{"_id":2,"_uid":2,"_dt":1492690957735,"_s":"7a9305809bb3dc79785bad27d4eab3f7"}
-{"weight":0,"method":"get","route":"/api/authorlist","query":"query ($page: Int, $size: Int) {\n  data: authorList(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      name\n      nationality\n      birthday\n    }\n  }\n}","createAt":1492690917481,"updateAt":1492690957711,"_id":2}
-{"k":"0000000078","o":"0000000381","v":"001"}
-{"_id":3,"_uid":4,"_dt":1492743385865,"_s":"6e17d61d1d2856c7a5a8a8fd031030e9"}
-{"weight":0,"method":"post","route":"/api/author","query":"mutation (\n  $id: ID\n  $name: String\n  $nationality: String\n  $birthday: String\n) {\n  data: saveAuthor (\n    _id: $id\n    name: $name\n    nationality: $nationality\n    birthday: $birthday\n  ) {\n    _id\n    name\n    nationality\n    birthday\n  }\n}","createAt":1492743266365,"updateAt":1492743385864,"_id":3}
-{"k":"0000000078","o":"0000000229","v":"001"}
-{"_id":4,"_uid":4,"_dt":1492743436124,"_s":"c0124c3492e75cc194995362b908364a"}
-{"weight":0,"method":"get","query":"query ($id: ID) {\n  data: author(_id: $id) {\n    id: _id\n    name\n    nationality\n    birthday\n  }\n}","route":"/api/author/:id","createAt":1492743366348,"updateAt":1492743436120,"_id":4}
-{"k":"0000000078","o":"0000000385","v":"001"}
-{"_id":3,"_uid":4,"_dt":1492753826041,"_s":"1a52338b6c149af428d50437bcb817b7"}
-{"weight":0,"method":"post","route":"/api/author","query":"mutation (\n  $id: ID\n  $name: String\n  $nationality: String\n  $birthday: String\n) {\n  data: saveAuthor (\n    _id: $id\n    name: $name\n    nationality: $nationality\n    birthday: $birthday\n  ) {\n    id: _id\n    name\n    nationality\n    birthday\n  }\n}","createAt":1492743266365,"updateAt":1492753826040,"_id":3}
-{"k":"0000000078","o":"0000000198","v":"001"}
-{"_id":5,"_uid":5,"_dt":1492762762197,"_s":"893909ffb47690d8e7fbf81d0c4db748"}
-{"weight":0,"method":"delete","query":"mutation ($id: ID) {\n  data: deleteAuthor (_id: $id)\n}","route":"/api/author","createAt":1492762762102,"updateAt":1492762762164,"_id":{"$wrap":"$oid","v":5}}
-{"k":"0000000078","o":"0000000305","v":"001"}
-{"_id":6,"_uid":6,"_dt":1492824429695,"_s":"473b0a56603e0de8243c1e9f1ee63b23"}
-{"weight":0,"method":"get","route":"/genres","query":"query ($page: Int, $size: Int) {\n  genreList(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      name\n      desc\n    }\n  }\n}","createAt":1492824429598,"updateAt":1492824429692,"_id":{"$wrap":"$oid","v":6}}
-{"k":"0000000078","o":"0000000288","v":"001"}
-{"_id":6,"_uid":6,"_dt":1492824438916,"_s":"d52b987dc08c0b67a26047fb26482a0d"}
-{"weight":0,"method":"get","route":"/api/genres","query":"query ($page: Int, $size: Int) {\n  genreList(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      name\n      desc\n    }\n  }\n}","createAt":1492824429598,"updateAt":1492824438906,"_id":6}
-{"k":"0000000078","o":"0000000217","v":"001"}
-{"_id":7,"_uid":7,"_dt":1492824498934,"_s":"a761323212ac3505691249877d72e245"}
-{"weight":0,"method":"get","route":"/genre/:id","query":"query ($id: ID) {\n  genre(_id: $id) {\n    id: _id\n    name\n    desc\n  }\n}","createAt":1492824498928,"updateAt":1492824498932,"_id":{"$wrap":"$oid","v":7}}
-{"k":"0000000078","o":"0000000200","v":"001"}
-{"_id":7,"_uid":7,"_dt":1492824507554,"_s":"439294845e13c06721fcedaf7d0b844a"}
-{"weight":0,"method":"get","route":"/api/genre/:id","query":"query ($id: ID) {\n  genre(_id: $id) {\n    id: _id\n    name\n    desc\n  }\n}","createAt":1492824498928,"updateAt":1492824507553,"_id":7}
-{"k":"0000000078","o":"0000000316","v":"001"}
-{"_id":8,"_uid":8,"_dt":1492824565853,"_s":"8c06395d7ead4b49e7e5eb4ec4524759"}
-{"weight":0,"method":"post","query":"mutation (\n  $id: ID\n  $name: String\n  $desc: String\n) {\n  data: saveGenre (\n    _id: $id\n    name: $name\n    desc: $desc\n  ) {\n    id: _id\n    name\n    desc\n  }\n}","route":"/api/genre","createAt":1492824565818,"updateAt":1492824565852,"_id":{"$wrap":"$oid","v":8}}
-{"k":"0000000078","o":"0000000206","v":"001"}
-{"_id":7,"_uid":8,"_dt":1492824575028,"_s":"6c21e24f07b09307d39b766d4261c170"}
-{"weight":0,"method":"get","route":"/api/genre/:id","query":"query ($id: ID) {\n  data: genre(_id: $id) {\n    id: _id\n    name\n    desc\n  }\n}","createAt":1492824498928,"updateAt":1492824575027,"_id":7}
-{"k":"0000000078","o":"0000000294","v":"001"}
-{"_id":6,"_uid":8,"_dt":1492824581982,"_s":"2998fe9a14434faeeb16ba43872b1d4a"}
-{"weight":0,"method":"get","route":"/api/genres","query":"query ($page: Int, $size: Int) {\n  data: genreList(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      name\n      desc\n    }\n  }\n}","createAt":1492824429598,"updateAt":1492824581981,"_id":6}
-{"k":"0000000078","o":"0000000196","v":"001"}
-{"_id":9,"_uid":9,"_dt":1492824637606,"_s":"185efeaea1b38c965c00b290676b1b70"}
-{"weight":0,"method":"delete","route":"/api/genre","query":"mutation ($id: ID) {\n  data: deleteGenre (_id: $id)\n}","createAt":1492824637594,"updateAt":1492824637600,"_id":{"$wrap":"$oid","v":9}}
-{"k":"0000000080","o":"0000000422","v":"001"}
-{"_id":10,"_uid":10,"_dt":1492848305224,"_s":"06832ebf5b83293f63199c13e405adeb"}
-{"weight":0,"method":"get","route":"/api/booklist","query":"query ($page: Int, $size: Int) {\n  data: bookList(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      title\n      author(fmt: \"{name}\")\n      genres(fmt: \"{name}\" join: \",\")\n      publishAt\n      cover\n      desc\n    }\n  }\n}","createAt":1492848305142,"updateAt":1492848305222,"_id":{"$wrap":"$oid","v":10}}
-{"k":"0000000080","o":"0000000323","v":"001"}
-{"_id":11,"_uid":11,"_dt":1492848467905,"_s":"074507f4c87538917f21cfd00de3708a"}
-{"weight":0,"method":"get","route":"/api/book/:_id","query":"query ($_id: ID) {\n  data: book(_id: $_id) {\n    id: _id\n    title\n    author(fmt: \"{_id}\")\n    genres(fmt: \"{_id}\"join: \",\")\n    publishAt\n    cover\n    desc\n  }\n}","createAt":1492848467863,"updateAt":1492848467904,"_id":{"$wrap":"$oid","v":11}}
-{"k":"0000000080","o":"0000000329","v":"001"}
-{"_id":10,"_uid":11,"_dt":1492848495876,"_s":"17169d791af3194149fb38b0e2fed167"}
-{"weight":0,"method":"get","route":"/api/booklist","query":"query ($page: Int, $size: Int) {\n  data: bookList(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      title\n      author(fmt: \"{name}\")\n      cover\n    }\n  }\n}","createAt":1492848305142,"updateAt":1492848495829,"_id":10}
-{"k":"0000000080","o":"0000000575","v":"001"}
-{"_id":12,"_uid":12,"_dt":1492848567888,"_s":"b8f6da411e4432eeb56a2389ed998ae4"}
-{"weight":0,"method":"post","route":"/api/book","query":"mutation (\n  $id: ID\n  $title: String\n  $author: ID\n  $genres: String\n  $publishAt: String\n  $cover: String\n  $desc: String\n) {\n  data: saveBook (\n    _id: $id\n    title: $title\n    author: $author\n    genres: $genres\n    publishAt: $publishAt\n    cover: $cover\n    desc: $desc\n  ) {\n    id: _id\n    title\n    author(fmt: \"{_id}\")\n    genres(fmt: \"{_id}\" join: \",\")\n    publishAt\n    cover\n    desc\n  }\n}","createAt":1492848567885,"updateAt":1492848567886,"_id":{"$wrap":"$oid","v":12}}
-{"k":"0000000080","o":"0000000195","v":"001"}
-{"_id":13,"_uid":13,"_dt":1492848609888,"_s":"585710a64806fdcdb294c0cd53af8628"}
-{"weight":0,"method":"delete","route":"/api/book","query":"mutation ($id: ID) {\n  data: deleteBook (_id: $id)\n}","createAt":1492848609885,"updateAt":1492848609888,"_id":{"$wrap":"$oid","v":13}}
-{"k":"0000000080","o":"0000000388","v":"001"}
-{"_id":10,"_uid":13,"_dt":1492850975339,"_s":"907a1409427ee51afa328551da339c0b"}
-{"weight":0,"method":"get","route":"/api/booklist","query":"query ($page: Int, $size: Int) {\n  data: bookList(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      title\n      author(fmt: \"{name}\")\n      cover\n      genres(fmt: \"{name}\"join: \",\")\n      publishAt\n    }\n  }\n}","createAt":1492848305142,"updateAt":1492850975262,"_id":10}
+{"k":"0000000079","o":"0000000361","v":"001"}
+{"_id":2,"_uid":13,"_dt":1495705680511,"_s":"8bf839855535fc1366773171ee203954"}
+{"weight":0,"method":"get","route":"/api/authorlist","query":"query ($page: Int, $size: Int) {\n  data: authorListWithPage(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      name\n      nationality\n      birthday\n    }\n  }\n}","createAt":1492690917481,"updateAt":1495705680509,"_id":2,"apiType":"graphql","status":1}
+{"k":"0000000079","o":"0000000396","v":"001"}
+{"_id":3,"_uid":13,"_dt":1495705700900,"_s":"a5fef952d84ac8cd6ddf45af694133d0"}
+{"weight":0,"method":"post","route":"/api/author","query":"mutation (\n  $id: ID\n  $name: String\n  $nationality: String\n  $birthday: String\n) {\n  data: saveAuthor (\n    _id: $id\n    name: $name\n    nationality: $nationality\n    birthday: $birthday\n  ) {\n    id: _id\n    name\n    nationality\n    birthday\n  }\n}","createAt":1492743266365,"updateAt":1495705700900,"_id":3,"status":1}
+{"k":"0000000079","o":"0000000240","v":"001"}
+{"_id":4,"_uid":13,"_dt":1495705698313,"_s":"89aea2e81d8dd126b311d44e89390487"}
+{"weight":0,"method":"get","query":"query ($id: ID) {\n  data: author(_id: $id) {\n    id: _id\n    name\n    nationality\n    birthday\n  }\n}","route":"/api/author/:id","createAt":1492743366348,"updateAt":1495705698312,"_id":4,"status":1}
+{"k":"0000000079","o":"0000000209","v":"001"}
+{"_id":5,"_uid":13,"_dt":1495705699491,"_s":"01f3ee4a584ec91863fccef563067f4b"}
+{"weight":0,"method":"delete","query":"mutation ($id: ID) {\n  data: deleteAuthor (_id: $id)\n}","route":"/api/author","createAt":1492762762102,"updateAt":1495705699490,"_id":{"$wrap":"$oid","v":5},"status":1}
+{"k":"0000000079","o":"0000000333","v":"001"}
+{"_id":6,"_uid":13,"_dt":1495705752948,"_s":"eaef0359051cd86d83dc45182bc6513d"}
+{"weight":0,"method":"get","route":"/api/genres","query":"query ($page: Int, $size: Int) {\n  data: genreListWithPage(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      name\n      desc\n    }\n  }\n}","createAt":1492824429598,"updateAt":1495705752946,"_id":6,"status":1,"apiType":"graphql"}
+{"k":"0000000079","o":"0000000217","v":"001"}
+{"_id":7,"_uid":13,"_dt":1495705701931,"_s":"9e1488258851e77158fc3cc507079c1b"}
+{"weight":0,"method":"get","route":"/api/genre/:id","query":"query ($id: ID) {\n  data: genre(_id: $id) {\n    id: _id\n    name\n    desc\n  }\n}","createAt":1492824498928,"updateAt":1495705701929,"_id":7,"status":1}
+{"k":"0000000079","o":"0000000327","v":"001"}
+{"_id":8,"_uid":13,"_dt":1495705434083,"_s":"2282f6b1e0ed77f63319e39243ef01b8"}
+{"weight":0,"method":"post","query":"mutation (\n  $id: ID\n  $name: String\n  $desc: String\n) {\n  data: saveGenre (\n    _id: $id\n    name: $name\n    desc: $desc\n  ) {\n    id: _id\n    name\n    desc\n  }\n}","route":"/api/genre","createAt":1492824565818,"updateAt":1495705434082,"_id":{"$wrap":"$oid","v":8},"status":1}
+{"k":"0000000079","o":"0000000227","v":"001"}
+{"_id":9,"_uid":13,"_dt":1495705794592,"_s":"05e7b1cb670f701ff387763bed631d6a"}
+{"weight":0,"method":"delete","route":"/api/genre","query":"mutation ($id: ID) {\n  data: deleteGenre (_id: $id)\n}","createAt":1492824637594,"updateAt":1495705794591,"_id":{"$wrap":"$oid","v":9},"status":1,"apiType":"graphql"}
+{"k":"0000000080","o":"0000000427","v":"001"}
+{"_id":10,"_uid":13,"_dt":1495705732405,"_s":"6cce8d232bac95e85a73afc914b75973"}
+{"weight":0,"method":"get","route":"/api/booklist","query":"query ($page: Int, $size: Int) {\n  data: bookListWithPage(page: $page, size: $size) {\n    total\n    page\n    size\n    list {\n      id: _id\n      title\n      author(fmt: \"{name}\")\n      cover\n      genres(fmt: \"{name}\"join: \",\")\n      publishAt\n    }\n  }\n}","createAt":1492848305142,"updateAt":1495705732404,"_id":10,"status":1,"apiType":"graphql"}
+{"k":"0000000080","o":"0000000354","v":"001"}
+{"_id":11,"_uid":13,"_dt":1495705788155,"_s":"5199ecfd42bc0a27a31d437d3e428d45"}
+{"weight":0,"method":"get","route":"/api/book/:_id","query":"query ($_id: ID) {\n  data: book(_id: $_id) {\n    id: _id\n    title\n    author(fmt: \"{_id}\")\n    genres(fmt: \"{_id}\"join: \",\")\n    publishAt\n    cover\n    desc\n  }\n}","createAt":1492848467863,"updateAt":1495705788154,"_id":{"$wrap":"$oid","v":11},"status":1,"apiType":"graphql"}
+{"k":"0000000080","o":"0000000606","v":"001"}
+{"_id":12,"_uid":13,"_dt":1495705801112,"_s":"25160457adca1487bfe2ab6f12858541"}
+{"weight":0,"method":"post","route":"/api/book","query":"mutation (\n  $id: ID\n  $title: String\n  $author: ID\n  $genres: String\n  $publishAt: String\n  $cover: String\n  $desc: String\n) {\n  data: saveBook (\n    _id: $id\n    title: $title\n    author: $author\n    genres: $genres\n    publishAt: $publishAt\n    cover: $cover\n    desc: $desc\n  ) {\n    id: _id\n    title\n    author(fmt: \"{_id}\")\n    genres(fmt: \"{_id}\" join: \",\")\n    publishAt\n    cover\n    desc\n  }\n}","createAt":1492848567885,"updateAt":1495705801111,"_id":{"$wrap":"$oid","v":12},"status":1,"apiType":"graphql"}
+{"k":"0000000080","o":"0000000206","v":"001"}
+{"_id":13,"_uid":13,"_dt":1495705432076,"_s":"3022e21f0a134201c2a0702f0cfae8be"}
+{"weight":0,"method":"delete","route":"/api/book","query":"mutation ($id: ID) {\n  data: deleteBook (_id: $id)\n}","createAt":1492848609885,"updateAt":1495705432073,"_id":{"$wrap":"$oid","v":13},"status":1}
