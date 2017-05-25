@@ -45,8 +45,8 @@ const app = new Koa()
 const router = new Router()
 
 const proxy = new httpProxy.createProxyServer({
-    target: 'http://localhost:3003/',
-    changeOrigin: true
+  target: 'http://localhost:3003/',
+  changeOrigin: true
 })
 
 const methods = ['get', 'post', 'put', 'delete']
@@ -70,8 +70,15 @@ router.get('**/react-dom.min.js', async function (ctx) {
   await send(ctx, 'demo/react-dom.js')
 })
 
+
+const proxyJs = new httpProxy.createProxyServer({
+  target: `http://localhost:${DEVPORT}/`,
+  changeOrigin: true
+})
+
 router.get('**/*.js(on)?', async function (ctx) {
-  ctx.redirect(`http://localhost:${DEVPORT}/${ctx.path}`)
+  proxyJs.web(ctx.req, ctx.res)
+  ctx.body = ctx.res
 })
 
 app.use(router.routes())

@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter as Router, Route, NavLink } from 'react-router-dom'
+import { HashRouter as Router, Route, NavLink, Redirect } from 'react-router-dom'
 
 import Author from '_/components/author'
 import Genre from '_/components/genre'
@@ -20,15 +20,16 @@ function App() {
         </div>
 
         <div className={_menu.container}>
+          <NavLink activeClassName={_menu.active} to="/book">书籍</NavLink>
           <NavLink activeClassName={_menu.active} to="/author">作者</NavLink>
           <NavLink activeClassName={_menu.active} to="/genre">类型</NavLink>
-          <NavLink activeClassName={_menu.active} to="/book">书籍</NavLink>
         </div>
 
         <div className={_styles.main}>
+          <Route exact path="/" render={() => <Redirect to="/book" />} />
+          <Route path="/book" component={Book} />
           <Route path="/author" component={Author} />
           <Route path="/genre" component={Genre} />
-          <Route path="/book" component={Book} />
         </div>
       </div>
     </Router>
