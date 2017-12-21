@@ -1,7 +1,8 @@
+const request = require('request')
 const Koa = require('koa')
 const send = require('koa-send')
-const httpProxy = require('http-proxy')
 const Router = require('koa-router')
+const body = require('koa-bodyparser')
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
 const config = require('./webpack.dev.config')
@@ -44,16 +45,18 @@ new WebpackDevServer(webpack(config), {
 const app = new Koa()
 const router = new Router()
 
-const proxy = new httpProxy.createProxyServer({
-  target: 'http://localhost:3003/',
-  changeOrigin: true
-})
-
 const methods = ['get', 'post', 'put', 'delete']
 methods.forEach(m => 
-  router[m]('/api/*', function (ctx) {
-    proxy.web(ctx.req, ctx.res)
-    ctx.body = ctx.res
+  router[m]('/api/*', body(), function (ctx) {
+    const options = {
+      uri: `http://localhost:3003${ctx.url}`,
+      mothed: m,
+    }
+    if (m === 'get') {
+      ctx.body = request(options)
+    } else {
+      ctx.body = request[m](options).form(ctx.request.body)
+    }
   })
 )
 
@@ -70,15 +73,13 @@ router.get('**/react-dom.min.js', async function (ctx) {
   await send(ctx, 'demo/react-dom.js')
 })
 
-
-const proxyJs = new httpProxy.createProxyServer({
-  target: `http://localhost:${DEVPORT}/`,
-  changeOrigin: true
-})
-
 router.get('**/*.js(on)?', async function (ctx) {
-  proxyJs.web(ctx.req, ctx.res)
-  ctx.body = ctx.res
+  const options = {
+    uri: `http://localhost:${DEVPORT}/${ctx.url}`,
+    mothed: 'GET',
+  }
+  ctx.set('Access-Control-Allow-Origin', '*')
+  ctx.body = request(options)
 })
 
 app.use(router.routes())
